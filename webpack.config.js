@@ -44,7 +44,7 @@ const config = {
       jQuery: 'jquery'
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'disable'
+      analyzerMode: 'static'
     }),
     new WebpackPwaManifest({
       name: 'Food Event',
@@ -55,29 +55,11 @@ const config = {
       theme_color: '#ffffff',
       fingerprints: false,
       inject: false,
-      ios: false,
-      orientation: "portrait",
-      display: "standalone",
-      crossorigin: null,
-      publicPath: null,
-      includeDirectory: true,
       icons: [
         {
           src: path.resolve('assets/img/icons/icon-512x512.png'),
-          sizes: [120, 152, 167, 180, 1024],
-          destination: path.join('assets/icons', 'ios'),
-          ios: true
-        },
-        {
-          src: path.resolve('assets/img/icons/icon-512x512.png'),
-          size: 1024,
-          destination: path.join('assets/icons', 'ios'),
-          ios: 'startup'
-        },
-        {
-          src: path.resolve('assets/img/icons/icon-512x512.png'),
-          sizes: [36, 48, 72, 96, 144, 192, 512],
-          destination: path.join('assets/icons', 'android')
+          sizes: [96, 128, 192, 256, 384, 512],
+          destination: path.join('assets', 'icons')
         }
       ]
     })
